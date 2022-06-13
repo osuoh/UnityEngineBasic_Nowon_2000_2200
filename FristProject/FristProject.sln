@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32014.148
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FristProject", "FristProject.csproj", "{381E97BB-DDBC-49F4-8046-02393D37C634}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{381E97BB-DDBC-49F4-8046-02393D37C634}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{381E97BB-DDBC-49F4-8046-02393D37C634}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{381E97BB-DDBC-49F4-8046-02393D37C634}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{381E97BB-DDBC-49F4-8046-02393D37C634}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {19FBA5C6-5786-4439-9E23-20FCF771C0E8}
+	EndGlobalSection
+EndGlobal
