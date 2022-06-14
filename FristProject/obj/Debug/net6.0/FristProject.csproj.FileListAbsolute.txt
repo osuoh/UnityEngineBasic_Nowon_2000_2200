@@ -1,0 +1,15 @@
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FristProject\bin\Debug\net6.0\FristProject.exe
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FristProject\bin\Debug\net6.0\FristProject.deps.json
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FristProject\bin\Debug\net6.0\FristProject.runtimeconfig.json
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FristProject\bin\Debug\net6.0\FristProject.dll
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FristProject\bin\Debug\net6.0\ref\FristProject.dll
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FristProject\bin\Debug\net6.0\FristProject.pdb
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FristProject\obj\Debug\net6.0\FristProject.csproj.AssemblyReference.cache
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FristProject\obj\Debug\net6.0\FristProject.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FristProject\obj\Debug\net6.0\FristProject.AssemblyInfoInputs.cache
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FristProject\obj\Debug\net6.0\FristProject.AssemblyInfo.cs
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FristProject\obj\Debug\net6.0\FristProject.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FristProject\obj\Debug\net6.0\FristProject.dll
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FristProject\obj\Debug\net6.0\ref\FristProject.dll
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FristProject\obj\Debug\net6.0\FristProject.pdb
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\FristProject\obj\Debug\net6.0\FristProject.genruntimeconfig.cache

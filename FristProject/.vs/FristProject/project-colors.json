@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "381e97bb-ddbc-49f4-8046-02393d37c634": {
+      "ProjectGuid": "381e97bb-ddbc-49f4-8046-02393d37c634",
+      "DisplayName": "FristProject",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "기타 파일",
+      "ColorIndex": -1
+    },
+    "eaa180aa-5fb9-4a89-bd69-3da3ec5f760e": {
+      "ProjectGuid": "eaa180aa-5fb9-4a89-bd69-3da3ec5f760e",
+      "DisplayName": "Variables",
+      "ColorIndex": 1
+    }
+  },
+  "NextColorIndex": 2
+}
