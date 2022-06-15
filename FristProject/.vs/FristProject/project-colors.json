@@ -15,7 +15,17 @@
       "ProjectGuid": "eaa180aa-5fb9-4a89-bd69-3da3ec5f760e",
       "DisplayName": "Variables",
       "ColorIndex": 1
+    },
+    "89204b8e-5989-41a0-b282-5aab042bb5e1": {
+      "ProjectGuid": "89204b8e-5989-41a0-b282-5aab042bb5e1",
+      "DisplayName": "Methods",
+      "ColorIndex": 2
+    },
+    "99d58422-e8b6-44ac-9cb4-560432827eb9": {
+      "ProjectGuid": "99d58422-e8b6-44ac-9cb4-560432827eb9",
+      "DisplayName": "ClassObjectInstance",
+      "ColorIndex": 3
     }
   },
-  "NextColorIndex": 2
+  "NextColorIndex": 4
 }
