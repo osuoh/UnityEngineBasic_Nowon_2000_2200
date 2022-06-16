@@ -15,23 +15,33 @@ namespace ClassObjectInstance
             int a;
             // Human : 클래스 타입
             // Human1 : 객체
-            Human human1 = new Human(); // new 키워드 : 동적할당하는 키워드  
+            Human human1 = new Human(); // new 키워드 : 동적할당하는 키워드   
+            // 객체화 : new Human(); 클래스로 객체를 생성하는 과정
+            // 인스턴스화 : 객체에 실제 데이터를 초기화해서 사용하게되는 과정
+            human1.height = 100f;
+            Console.WriteLine(human1.height);
+            Human.age = 3;
+            Console.WriteLine(Human.age);
+            Console.WriteLine(human1.height);
+            
+            
+            // .연산자 : 멤버에 접근할때 쓰는 연산자
         }
     }
 
     class Human
     {
         public static int age; 
-        private float height; 
-        double weight; 
-        bool isResting; 
-        char genderChar; 
-        string name;
+        public float height; 
+        private double weight; 
+        private bool isResting; 
+        private char genderChar; 
+        private string name;
 
         // 생성자 
         public Human()
         {
-
+            height = 20f;
         }
     }
 }

@@ -25,7 +25,12 @@
       "ProjectGuid": "99d58422-e8b6-44ac-9cb4-560432827eb9",
       "DisplayName": "ClassObjectInstance",
       "ColorIndex": 3
+    },
+    "cade173b-b552-48e0-b3c4-6aff2b0cabd8": {
+      "ProjectGuid": "cade173b-b552-48e0-b3c4-6aff2b0cabd8",
+      "DisplayName": "InstantiationExample",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 5
 }
