@@ -30,7 +30,17 @@
       "ProjectGuid": "cade173b-b552-48e0-b3c4-6aff2b0cabd8",
       "DisplayName": "InstantiationExample",
       "ColorIndex": 4
+    },
+    "b050f7da-8084-4b83-be50-e5888fbf2d5b": {
+      "ProjectGuid": "b050f7da-8084-4b83-be50-e5888fbf2d5b",
+      "DisplayName": "Statement_If",
+      "ColorIndex": 5
+    },
+    "06cffba2-1c55-4b3a-9ec4-51ca164928b8": {
+      "ProjectGuid": "06cffba2-1c55-4b3a-9ec4-51ca164928b8",
+      "DisplayName": "Example01_ClassObjectInstance",
+      "ColorIndex": 6
     }
   },
-  "NextColorIndex": 5
+  "NextColorIndex": 7
 }
