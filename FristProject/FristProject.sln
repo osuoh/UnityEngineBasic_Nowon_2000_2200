@@ -17,9 +17,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Statement_If", "..\Statemen
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example01_ClassObjectInstance", "..\Example01_ClassObjectInstance\Example01_ClassObjectInstance.csproj", "{06CFFBA2-1C55-4B3A-9EC4-51CA164928B8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Operators", "..\Operators\Operators.csproj", "{5DAE1C1A-D198-42A4-94DE-9BB16B088417}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Operators", "..\Operators\Operators.csproj", "{5DAE1C1A-D198-42A4-94DE-9BB16B088417}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OperatorFunctions", "..\OperatorFunctions\OperatorFunctions.csproj", "{56988380-130E-4A7B-B0A1-5F05CF20171F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OperatorFunctions", "..\OperatorFunctions\OperatorFunctions.csproj", "{56988380-130E-4A7B-B0A1-5F05CF20171F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Array", "..\Array\Array.csproj", "{41E1F1C1-98F4-43CB-AC3C-EA92003549C5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{56988380-130E-4A7B-B0A1-5F05CF20171F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{56988380-130E-4A7B-B0A1-5F05CF20171F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{56988380-130E-4A7B-B0A1-5F05CF20171F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{41E1F1C1-98F4-43CB-AC3C-EA92003549C5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{41E1F1C1-98F4-43CB-AC3C-EA92003549C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{41E1F1C1-98F4-43CB-AC3C-EA92003549C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{41E1F1C1-98F4-43CB-AC3C-EA92003549C5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

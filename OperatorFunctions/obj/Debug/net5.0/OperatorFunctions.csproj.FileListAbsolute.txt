@@ -1,0 +1,16 @@
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\OperatorFunctions\bin\Debug\net5.0\OperatorFunctions.exe
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\OperatorFunctions\bin\Debug\net5.0\OperatorFunctions.deps.json
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\OperatorFunctions\bin\Debug\net5.0\OperatorFunctions.runtimeconfig.json
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\OperatorFunctions\bin\Debug\net5.0\OperatorFunctions.runtimeconfig.dev.json
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\OperatorFunctions\bin\Debug\net5.0\OperatorFunctions.dll
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\OperatorFunctions\bin\Debug\net5.0\ref\OperatorFunctions.dll
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\OperatorFunctions\bin\Debug\net5.0\OperatorFunctions.pdb
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\OperatorFunctions\obj\Debug\net5.0\OperatorFunctions.csproj.AssemblyReference.cache
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\OperatorFunctions\obj\Debug\net5.0\OperatorFunctions.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\OperatorFunctions\obj\Debug\net5.0\OperatorFunctions.AssemblyInfoInputs.cache
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\OperatorFunctions\obj\Debug\net5.0\OperatorFunctions.AssemblyInfo.cs
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\OperatorFunctions\obj\Debug\net5.0\OperatorFunctions.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\OperatorFunctions\obj\Debug\net5.0\OperatorFunctions.dll
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\OperatorFunctions\obj\Debug\net5.0\ref\OperatorFunctions.dll
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\OperatorFunctions\obj\Debug\net5.0\OperatorFunctions.pdb
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\OperatorFunctions\obj\Debug\net5.0\OperatorFunctions.genruntimeconfig.cache

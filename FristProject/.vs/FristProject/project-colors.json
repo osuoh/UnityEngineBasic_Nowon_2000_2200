@@ -50,7 +50,12 @@
       "ProjectGuid": "56988380-130e-4a7b-b0a1-5f05cf20171f",
       "DisplayName": "OperatorFunctions",
       "ColorIndex": 8
+    },
+    "41e1f1c1-98f4-43cb-ac3c-ea92003549c5": {
+      "ProjectGuid": "41e1f1c1-98f4-43cb-ac3c-ea92003549c5",
+      "DisplayName": "Array",
+      "ColorIndex": 9
     }
   },
-  "NextColorIndex": 9
+  "NextColorIndex": 10
 }
