@@ -21,7 +21,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Operators", "..\Operators\O
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OperatorFunctions", "..\OperatorFunctions\OperatorFunctions.csproj", "{56988380-130E-4A7B-B0A1-5F05CF20171F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Array", "..\Array\Array.csproj", "{41E1F1C1-98F4-43CB-AC3C-EA92003549C5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Array", "..\Array\Array.csproj", "{41E1F1C1-98F4-43CB-AC3C-EA92003549C5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Statement_Loops", "..\Statement_Loops\Statement_Loops.csproj", "{4DEA7879-58EA-46AE-B6E9-7622D1415E38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example02_Array2D", "..\Example02_Array2D\Example02_Array2D.csproj", "{415DE3B2-C1D8-4BC7-9914-28F7ED36188B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +73,14 @@ Global
 		{41E1F1C1-98F4-43CB-AC3C-EA92003549C5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{41E1F1C1-98F4-43CB-AC3C-EA92003549C5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{41E1F1C1-98F4-43CB-AC3C-EA92003549C5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DEA7879-58EA-46AE-B6E9-7622D1415E38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DEA7879-58EA-46AE-B6E9-7622D1415E38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DEA7879-58EA-46AE-B6E9-7622D1415E38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DEA7879-58EA-46AE-B6E9-7622D1415E38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{415DE3B2-C1D8-4BC7-9914-28F7ED36188B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{415DE3B2-C1D8-4BC7-9914-28F7ED36188B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{415DE3B2-C1D8-4BC7-9914-28F7ED36188B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{415DE3B2-C1D8-4BC7-9914-28F7ED36188B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

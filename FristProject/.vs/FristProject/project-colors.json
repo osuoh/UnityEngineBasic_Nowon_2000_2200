@@ -55,7 +55,17 @@
       "ProjectGuid": "41e1f1c1-98f4-43cb-ac3c-ea92003549c5",
       "DisplayName": "Array",
       "ColorIndex": 9
+    },
+    "4dea7879-58ea-46ae-b6e9-7622d1415e38": {
+      "ProjectGuid": "4dea7879-58ea-46ae-b6e9-7622d1415e38",
+      "DisplayName": "Statement_Loops",
+      "ColorIndex": 10
+    },
+    "415de3b2-c1d8-4bc7-9914-28f7ed36188b": {
+      "ProjectGuid": "415de3b2-c1d8-4bc7-9914-28f7ed36188b",
+      "DisplayName": "Example02_Array2D",
+      "ColorIndex": 11
     }
   },
-  "NextColorIndex": 10
+  "NextColorIndex": 12
 }
