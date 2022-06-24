@@ -32,7 +32,7 @@ namespace Statement_Loops
             //{
             //
             //}
-            for (i; true; i++)
+            for (i++; true; i++)
             {
                 
             }
