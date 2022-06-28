@@ -27,7 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Statement_Loops", "..\State
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example02_Array2D", "..\Example02_Array2D\Example02_Array2D.csproj", "{415DE3B2-C1D8-4BC7-9914-28F7ED36188B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Example03_DynamicArray", "..\Example03_DynamicArray\Example03_DynamicArray.csproj", "{DBC38EF1-8EE8-405C-9EC1-3138088FB021}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example03_DynamicArray", "..\Example03_DynamicArray\Example03_DynamicArray.csproj", "{DBC38EF1-8EE8-405C-9EC1-3138088FB021}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericCollections", "..\GenericCollections\GenericCollections.csproj", "{C287D158-4BE5-4913-B58D-6249438A5663}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -87,6 +89,10 @@ Global
 		{DBC38EF1-8EE8-405C-9EC1-3138088FB021}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DBC38EF1-8EE8-405C-9EC1-3138088FB021}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DBC38EF1-8EE8-405C-9EC1-3138088FB021}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C287D158-4BE5-4913-B58D-6249438A5663}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C287D158-4BE5-4913-B58D-6249438A5663}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C287D158-4BE5-4913-B58D-6249438A5663}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C287D158-4BE5-4913-B58D-6249438A5663}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
