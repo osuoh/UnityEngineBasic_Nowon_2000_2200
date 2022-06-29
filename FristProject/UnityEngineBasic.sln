@@ -29,7 +29,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example02_Array2D", "..\Exa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Example03_DynamicArray", "..\Example03_DynamicArray\Example03_DynamicArray.csproj", "{DBC38EF1-8EE8-405C-9EC1-3138088FB021}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GenericCollections", "..\GenericCollections\GenericCollections.csproj", "{C287D158-4BE5-4913-B58D-6249438A5663}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GenericCollections", "..\GenericCollections\GenericCollections.csproj", "{C287D158-4BE5-4913-B58D-6249438A5663}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Enum_SwitchCase", "..\Enum_SwitchCase\Enum_SwitchCase.csproj", "{F4AA88A4-AE3B-417B-93DC-D8DC62B27A94}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -93,6 +95,10 @@ Global
 		{C287D158-4BE5-4913-B58D-6249438A5663}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C287D158-4BE5-4913-B58D-6249438A5663}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C287D158-4BE5-4913-B58D-6249438A5663}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4AA88A4-AE3B-417B-93DC-D8DC62B27A94}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4AA88A4-AE3B-417B-93DC-D8DC62B27A94}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4AA88A4-AE3B-417B-93DC-D8DC62B27A94}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4AA88A4-AE3B-417B-93DC-D8DC62B27A94}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
