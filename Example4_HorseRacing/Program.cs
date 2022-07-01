@@ -27,7 +27,7 @@ namespace Example4_HorseRacing
             }
             Console.WriteLine("++++!경주 시작!++++");
             int length = horse.Length;
-            int count = 0;
+            int count = 1;
             
             // 경주 중
             while (isGameFinished == false)

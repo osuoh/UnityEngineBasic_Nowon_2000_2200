@@ -85,7 +85,12 @@
       "ProjectGuid": "23c5942d-167c-4d2e-b63e-543f83e1d642",
       "DisplayName": "Example4_HorseRacing",
       "ColorIndex": 15
+    },
+    "3de83d3b-66a9-45f2-8698-8f444dd61fb7": {
+      "ProjectGuid": "3de83d3b-66a9-45f2-8698-8f444dd61fb7",
+      "DisplayName": "Structure",
+      "ColorIndex": 0
     }
   },
-  "NextColorIndex": 0
+  "NextColorIndex": 1
 }
