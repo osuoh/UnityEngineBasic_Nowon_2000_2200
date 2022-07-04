@@ -26,6 +26,7 @@ namespace Example4_HorseRacing
                 horse[i].name = $"{i+1}번마";
             }
             Console.WriteLine("++++!경주 시작!++++");
+
             int length = horse.Length;
             int count = 0;
             
