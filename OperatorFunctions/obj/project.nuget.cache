@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Qqh5Jftrp2EvoWUDHOjA9g+18a7PWG83hjsWzFf+iCTcct+B1yMj/ytsRYmBcAwulKVXfz0zdMjHj3vhmkTpZQ==",
+  "dgSpecHash": "CY8C5cOMFalrAmv7P1+f0uT3DCdbW0eczFhNY2T0SsYOXVXYx0p9/VpceLDW2E0mJcCh32xnXiLEpDWF5TwZgA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ghddl\\Documents\\GitHub\\UnityEngineBasic_Nowon_2000_2200\\OperatorFunctions\\OperatorFunctions.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\User\\Documents\\GitHub\\UnityEngineBasic_Nowon_2000_2200\\OperatorFunctions\\OperatorFunctions.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
+  ],
   "logs": []
 }

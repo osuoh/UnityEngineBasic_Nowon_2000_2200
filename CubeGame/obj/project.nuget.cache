@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "M8qk/IyFhLJl0J/+7e9i0RBy2+zHAl4TIRnLd8TX6w9Dd9zbwh4NVxbTeWZ1VF3LVOfHyIY+0jGUsYIaBjAwuQ==",
+  "dgSpecHash": "aHhwuyus+J3ZhN9fowRLVsgQqjXpjsMtXlai9WGfYBuYA9vBL4J+Se9gqODPy5DsyLjdeBh7qIV4Z+YSC3uuzw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ghddl\\Documents\\GitHub\\UnityEngineBasic_Nowon_2000_2200\\CubeGame\\CubeGame.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\User\\Documents\\GitHub\\UnityEngineBasic_Nowon_2000_2200\\CubeGame\\CubeGame.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
+  ],
   "logs": []
 }

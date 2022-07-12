@@ -1,0 +1,16 @@
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\CubeGame\bin\Debug\net5.0\CubeGame.exe
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\CubeGame\bin\Debug\net5.0\CubeGame.deps.json
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\CubeGame\bin\Debug\net5.0\CubeGame.runtimeconfig.json
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\CubeGame\bin\Debug\net5.0\CubeGame.runtimeconfig.dev.json
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\CubeGame\bin\Debug\net5.0\CubeGame.dll
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\CubeGame\bin\Debug\net5.0\ref\CubeGame.dll
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\CubeGame\bin\Debug\net5.0\CubeGame.pdb
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\CubeGame\obj\Debug\net5.0\CubeGame.csproj.AssemblyReference.cache
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\CubeGame\obj\Debug\net5.0\CubeGame.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\CubeGame\obj\Debug\net5.0\CubeGame.AssemblyInfoInputs.cache
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\CubeGame\obj\Debug\net5.0\CubeGame.AssemblyInfo.cs
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\CubeGame\obj\Debug\net5.0\CubeGame.csproj.CoreCompileInputs.cache
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\CubeGame\obj\Debug\net5.0\CubeGame.dll
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\CubeGame\obj\Debug\net5.0\ref\CubeGame.dll
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\CubeGame\obj\Debug\net5.0\CubeGame.pdb
+C:\Users\User\Documents\GitHub\UnityEngineBasic_Nowon_2000_2200\CubeGame\obj\Debug\net5.0\CubeGame.genruntimeconfig.cache

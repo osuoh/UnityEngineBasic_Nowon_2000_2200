@@ -1,24 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ghddl\\Documents\\GitHub\\UnityEngineBasic_Nowon_2000_2200\\Example4_HorseRacing\\Example4_HorseRacing.csproj": {}
+    "C:\\Users\\User\\Documents\\GitHub\\UnityEngineBasic_Nowon_2000_2200\\Example4_HorseRacing\\Example4_HorseRacing.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ghddl\\Documents\\GitHub\\UnityEngineBasic_Nowon_2000_2200\\Example4_HorseRacing\\Example4_HorseRacing.csproj": {
+    "C:\\Users\\User\\Documents\\GitHub\\UnityEngineBasic_Nowon_2000_2200\\Example4_HorseRacing\\Example4_HorseRacing.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ghddl\\Documents\\GitHub\\UnityEngineBasic_Nowon_2000_2200\\Example4_HorseRacing\\Example4_HorseRacing.csproj",
+        "projectUniqueName": "C:\\Users\\User\\Documents\\GitHub\\UnityEngineBasic_Nowon_2000_2200\\Example4_HorseRacing\\Example4_HorseRacing.csproj",
         "projectName": "Example4_HorseRacing",
-        "projectPath": "C:\\Users\\ghddl\\Documents\\GitHub\\UnityEngineBasic_Nowon_2000_2200\\Example4_HorseRacing\\Example4_HorseRacing.csproj",
-        "packagesPath": "C:\\Users\\ghddl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ghddl\\Documents\\GitHub\\UnityEngineBasic_Nowon_2000_2200\\Example4_HorseRacing\\obj\\",
+        "projectPath": "C:\\Users\\User\\Documents\\GitHub\\UnityEngineBasic_Nowon_2000_2200\\Example4_HorseRacing\\Example4_HorseRacing.csproj",
+        "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\User\\Documents\\GitHub\\UnityEngineBasic_Nowon_2000_2200\\Example4_HorseRacing\\obj\\",
         "projectStyle": "PackageReference",
-        "fallbackFolders": [
-          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
-        ],
         "configFilePaths": [
-          "C:\\Users\\ghddl\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Users\\User\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -53,12 +49,18 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[5.0.13, 5.0.13]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.NETCore.App": {
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
         }
       }
     }

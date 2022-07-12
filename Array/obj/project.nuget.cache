@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "Gcj/roKv1xwWq3qsfhMBTsF7tWATeIEgaYvi96egaJSFreYGx8/MeNsYSR1JkwJN08X9Uf6FSU8V4Hj4X069SA==",
+  "dgSpecHash": "tCTDmFyNAflK/DMZkwTzFaUcCU/RVYAafRN3VPB8mUmV+Oyj69QJpObzUT/MMCJmZDwFuceRDRTzUiPcmHTlTg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\ghddl\\Documents\\GitHub\\UnityEngineBasic_Nowon_2000_2200\\Array\\Array.csproj",
-  "expectedPackageFiles": [],
+  "projectFilePath": "C:\\Users\\User\\Documents\\GitHub\\UnityEngineBasic_Nowon_2000_2200\\Array\\Array.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\User\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\5.0.13\\microsoft.netcore.app.host.win-x64.5.0.13.nupkg.sha512"
+  ],
   "logs": []
 }

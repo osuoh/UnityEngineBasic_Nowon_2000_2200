@@ -85,7 +85,22 @@
       "ProjectGuid": "23c5942d-167c-4d2e-b63e-543f83e1d642",
       "DisplayName": "Example4_HorseRacing",
       "ColorIndex": 15
+    },
+    "31a951b5-6ab9-49c2-ad26-aa6464f4bb6f": {
+      "ProjectGuid": "31a951b5-6ab9-49c2-ad26-aa6464f4bb6f",
+      "DisplayName": "CubeGame",
+      "ColorIndex": 0
+    },
+    "575e04f5-353a-4b8c-9757-5e80ce5d2cdc": {
+      "ProjectGuid": "575e04f5-353a-4b8c-9757-5e80ce5d2cdc",
+      "DisplayName": "Delegate",
+      "ColorIndex": 1
+    },
+    "d01d3612-e7ab-444b-a71b-6551c5a5822e": {
+      "ProjectGuid": "d01d3612-e7ab-444b-a71b-6551c5a5822e",
+      "DisplayName": "ClassInheritance",
+      "ColorIndex": 2
     }
   },
-  "NextColorIndex": 0
+  "NextColorIndex": 3
 }

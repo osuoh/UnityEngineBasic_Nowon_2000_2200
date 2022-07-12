@@ -7,6 +7,7 @@ namespace Delegate
     {
         public delegate int MyDelegate(int a, int b);
         public static MyDelegate opDelegate;
+        // public static event MyDelegate opDelegate;
         // event 한정자 
         // 이벤트가 선언된 클래스 내에서만 해당 대리자를 호출할 수 있으며 
         // 외부 클래스에서는 구독및 구독취소 ( += 또는 -= ) 만 가능하다. 
