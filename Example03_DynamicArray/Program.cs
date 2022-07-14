@@ -19,10 +19,42 @@ namespace Example03_DynamicArray
             dynamicArray[3] = 10;
             Console.WriteLine(dynamicArray[3]);
 
+            foreach (var item in dynamicArray)
+            {
+                Console.WriteLine(item);
+            }
+
+            IEnumerator<int> myEnum = dynamicArray.GetEnumerator();
+            while (myEnum.MoveNext())
+            {
+                Console.WriteLine(myEnum.Current);
+            }
+
             List<int> list = new List<int>();
             list.Add(5);
             list.Remove(5);
-            list.RemoveAt(0);
+            
+
+            List<int>.Enumerator enumerator = list.GetEnumerator();
+
+            while (enumerator.MoveNext())
+            {
+                Console.WriteLine(enumerator.Current);
+            }
+
+            myEnum.Reset();
+
+            while (enumerator.MoveNext())
+            {
+                Console.WriteLine(enumerator.Current);
+            }
+
+
+
+            foreach (var item in list)
+            {
+                Console.WriteLine(item);
+            }
         }
     }
 }
