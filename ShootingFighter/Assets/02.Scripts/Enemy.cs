@@ -16,7 +16,11 @@ public class Enemy : MonoBehaviour
             _hp = value;
             hpBar.value = _hp / hpMax;
             if (_hp <= 0)
+            {
+                GameObject effect =  Instantiate(_destroyEffect, transform.position, transform.rotation);
+                Destroy(effect, 2f);
                 Destroy(gameObject);
+            }
         }
         get
         {
@@ -30,12 +34,15 @@ public class Enemy : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private LayerMask _targetLayer;
     [SerializeField] private float _damage;
+    [SerializeField] private GameObject _destroyEffect;
 
     private void Awake()
     {
         hp = hpMax;
         
     }
+
+    
     private void FixedUpdate()
     {
         Vector3 deltaMove= Vector3.back * moveSpeed * Time.fixedDeltaTime;
