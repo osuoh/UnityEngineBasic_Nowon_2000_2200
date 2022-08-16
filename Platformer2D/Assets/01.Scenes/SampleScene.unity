@@ -438,18 +438,21 @@ MonoBehaviour:
   _slideState: 0
   _attackState: 0
   _dashState: 0
+  _crouchState: 0
+  _downJumpState: 0
   _moveSpeed: 1
   _jumpForce: 2
   _slideSpeed: 3
   _dashSpeed: 4
-  _attackHitCastCenter: {x: 0.2, y: 0.2}
-  _attackHitCastSize: {x: 0.4, y: 0.4}
+  _downJumpForce: 1
+  _attackHitCastCenter: {x: 0, y: 0}
+  _attackHitCastSize: {x: 0, y: 0}
   _attackTargetLayer:
     serializedVersion: 2
-    m_Bits: 4294967295
-  _directionInit: 1
-  _colOffsetCrouch: {x: 0, y: 0}
-  _colSizeCrouch: {x: 0, y: 0}
+    m_Bits: 0
+  _directionInit: 0
+  _colOffsetCrouch: {x: 0, y: 0.075}
+  _colSizeCrouch: {x: 0.15, y: 0.15}
 --- !u!4 &830322353
 Transform:
   m_ObjectHideFlags: 0
@@ -533,7 +536,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5489a0f3a967efd458aa046b62f52dc6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  isDetected: 0
   _targetLayer:
     serializedVersion: 2
     m_Bits: 1024
@@ -549,7 +551,7 @@ GameObject:
   - component: {fileID: 834371955}
   - component: {fileID: 834371954}
   - component: {fileID: 834371953}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -660,7 +662,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 834371952}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.548, y: 0.295, z: 0}
+  m_LocalPosition: {x: 0.543, y: 0.309, z: 0}
   m_LocalScale: {x: 0.27670154, y: 0.089977704, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -678,7 +680,7 @@ GameObject:
   - component: {fileID: 1644199295}
   - component: {fileID: 1644199294}
   - component: {fileID: 1644199293}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -789,7 +791,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1644199292}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.417, y: 0.199, z: 0}
+  m_LocalPosition: {x: 0.412, y: 0.204, z: 0}
   m_LocalScale: {x: 0.27670154, y: 0.089977704, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -807,7 +809,7 @@ GameObject:
   - component: {fileID: 2043292706}
   - component: {fileID: 2043292708}
   - component: {fileID: 2043292709}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
