@@ -25,7 +25,6 @@ public class PlayerController : MonoBehaviour
         OnAction,
         Finish
     }
-
     private enum MoveState
     {
         Idle,
@@ -34,7 +33,6 @@ public class PlayerController : MonoBehaviour
         OnAction,
         Finish
     }
-
     private enum JumpState
     {
         Idle,
@@ -43,7 +41,6 @@ public class PlayerController : MonoBehaviour
         OnAction,
         Finish
     }
-
     private enum FallState
     {
         Idle,
@@ -60,7 +57,6 @@ public class PlayerController : MonoBehaviour
         OnAction,
         Finish
     }
-
     private enum AttackState
     {
         Idle,
@@ -69,7 +65,6 @@ public class PlayerController : MonoBehaviour
         OnAction,
         Finish
     }
-
     private enum DashState
     {
         Idle,
@@ -78,7 +73,6 @@ public class PlayerController : MonoBehaviour
         OnAction,
         Finish
     }
-
     private enum CrouchState
     {
         Idle,
@@ -96,7 +90,6 @@ public class PlayerController : MonoBehaviour
         OnAction,
         Finish
     }
-
     public State state;
     [SerializeField] private IdleState _idleState;
     [SerializeField] private MoveState _moveState;
@@ -107,19 +100,18 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private DashState _dashState;
     [SerializeField] private CrouchState _crouchState;
     [SerializeField] private DownJumpState _downJumpState;
-
     private Vector2 _move;
     [SerializeField] private float _moveSpeed = 1.0f;
     [SerializeField] private float _jumpForce = 2.0f;
     [SerializeField] private float _slideSpeed = 3.0f;
     [SerializeField] private float _dashSpeed = 4.0f;
     [SerializeField] private float _downJumpForce = 1.0f;
-    
 
     [SerializeField] private Vector2 _attackHitCastCenter;
     [SerializeField] private Vector2 _attackHitCastSize;
     [SerializeField] private LayerMask _attackTargetLayer;
 
+    
     // -1 : left , +1 : right
     private int _direction;
     public int direction
@@ -143,6 +135,8 @@ public class PlayerController : MonoBehaviour
         }
     }
     [SerializeField] private int _directionInit;
+
+    private Player _player;
     private Animator _animator;
     private Rigidbody2D _rb;
     private CapsuleCollider2D _col;
@@ -150,21 +144,39 @@ public class PlayerController : MonoBehaviour
     private Vector2 _colOffsetOrigin;
     private Vector2 _colSizeOrigin;
     [SerializeField] private Vector2 _colOffsetCrouch = new Vector2(0.0f, 0.075f);
-    [SerializeField] private Vector2 _colSizeCrouch =  new Vector2(0.15f, 0.15f);
+    [SerializeField] private Vector2 _colSizeCrouch = new Vector2(0.15f, 0.15f);
+    [SerializeField] private Vector2 _knockBackForce;
 
-    private bool isMovable = true;
-    private bool isDirectionChangable = true;
+
+    private bool _isMovable = true;
+    private bool _isDirectionChangable = true;
     private float _slideAnimationTime;
     private float _attackAnimationTime;
     private float _dashAnimationTime;
     private float _animationTimer;
 
+
     private float h { get => Input.GetAxis("Horizontal"); }
     private float v { get => Input.GetAxis("Vertical"); }
 
+    public void TryHurt()
+    {
+        // todo -> changestate to hurt
+    }
+    public void TryDie()
+    {
+        // todo -> changestate to die
+    }
+    public void KnockBack()
+    {
+        _rb.velocity = Vector2.zero;
+        _rb.AddForce(new Vector2(-_direction * _knockBackForce.x, _knockBackForce.y), ForceMode2D.Impulse);
+    }
+
     private void Awake()
     {
-        direction = _directionInit;
+        direction = _directionInit;    
+        _player = GetComponent<Player>();
         _rb = GetComponent<Rigidbody2D>();
         _col = GetComponent<CapsuleCollider2D>();
         _animator = GetComponent<Animator>();
@@ -178,56 +190,52 @@ public class PlayerController : MonoBehaviour
 
     private void Update()
     {
-        if (isDirectionChangable)
+        if (_isDirectionChangable)
         {
             if (h < 0.0f)
                 direction = -1;
             else if (h > 0.0f)
                 direction = 1;
-            _move.x = h;
         }
-        
 
-        if (isMovable)
+        if (_isMovable)
         {
+            _move.x = h;
+
             if (Mathf.Abs(_move.x) > 0.0f)
                 ChangeState(State.Move);
             else
                 ChangeState(State.Idle);
         }
-
+        
         // 점프
-        if (Input.GetKeyDown(KeyCode.LeftAlt)) 
-          
+        if (Input.GetKeyDown(KeyCode.LeftAlt))
         {
             if (state != State.Crouch)
             {
                 if (state != State.Jump &&
                     state != State.Fall &&
-                    state != State.DownJump &&
-                    state != State.Crouch)
+                    state != State.DownJump)
                     ChangeState(State.Jump);
             }
             else
             {
                 ChangeState(State.DownJump);
             }
-
-            
         }
 
         // 슬라이드
         if (Input.GetKeyDown(KeyCode.X) &&
-            (state == State.Idle ||
+            (state == State.Idle || 
              state == State.Move))
         {
             ChangeState(State.Slide);
         }
 
         // 공격
-        if (Input.GetKeyDown(KeyCode.LeftControl) &&
+        if (Input.GetKeyDown(KeyCode.A) && 
             (state == State.Idle ||
-             state == State.Move ||
+             state == State.Move || 
              state == State.Jump ||
              state == State.Fall))
         {
@@ -245,7 +253,7 @@ public class PlayerController : MonoBehaviour
         }
 
         // 숙이기
-        if (Input.GetKeyDown(KeyCode.DownArrow) &&
+        if (Input.GetKey(KeyCode.DownArrow) &&
             (state == State.Idle ||
              state == State.Move))
         {
@@ -253,7 +261,6 @@ public class PlayerController : MonoBehaviour
         }
 
         UpdateState();
-
     }
 
     private void FixedUpdate()
@@ -340,8 +347,7 @@ public class PlayerController : MonoBehaviour
                 break;
         }
 
-        // 다음 하위 상태머신 준비
-
+        // 다음 하위 상태 머신 준비
         switch (newState)
         {
             case State.Idle:
@@ -389,8 +395,8 @@ public class PlayerController : MonoBehaviour
             case IdleState.Idle:
                 break;
             case IdleState.Prepare:
-                isMovable = true;
-                isDirectionChangable = true;
+                _isMovable = true;
+                _isDirectionChangable = true;
                 _animator.Play("Idle");
                 _idleState = IdleState.OnAction;
                 break;
@@ -405,7 +411,6 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
-
     private void UpdateMoveState()
     {
         switch (_moveState)
@@ -413,8 +418,8 @@ public class PlayerController : MonoBehaviour
             case MoveState.Idle:
                 break;
             case MoveState.Prepare:
-                isMovable = true;
-                isDirectionChangable = true;
+                _isMovable = true;
+                _isDirectionChangable = true;
                 _animator.Play("Move");
                 _moveState = MoveState.OnAction;
                 break;
@@ -437,15 +442,14 @@ public class PlayerController : MonoBehaviour
             case JumpState.Idle:
                 break;
             case JumpState.Prepare:
-                isMovable = false;
-                isDirectionChangable = true;
+                _isMovable = false;
+                _isDirectionChangable = true;
                 _animator.Play("Jump");
-                _rb.velocity = new Vector2(_rb.velocity.x, 0);                   
+                _rb.velocity = new Vector2(_rb.velocity.x, 0);
                 _rb.AddForce(Vector2.up * _jumpForce, ForceMode2D.Impulse);
                 _jumpState++;
                 break;
             case JumpState.Casting:
-                // 발이 땅에서 떨어졌는지?
                 if (_groundDetector.isDetected == false)
                     _jumpState++;
                 break;
@@ -469,8 +473,8 @@ public class PlayerController : MonoBehaviour
             case FallState.Idle:
                 break;
             case FallState.Prepare:
-                isMovable = false;
-                isDirectionChangable = true;
+                _isMovable = false;
+                _isDirectionChangable = true;
                 _animator.Play("Fall");
                 _fallState = FallState.OnAction;
                 break;
@@ -496,8 +500,8 @@ public class PlayerController : MonoBehaviour
             case SlideState.Idle:
                 break;
             case SlideState.Prepare:
-                isMovable = false;
-                isDirectionChangable = false;
+                _isMovable = false;
+                _isDirectionChangable = false;
                 _animator.Play("Slide");
                 _animationTimer = _slideAnimationTime;
                 _slideState++;
@@ -542,8 +546,10 @@ public class PlayerController : MonoBehaviour
             case AttackState.Idle:
                 break;
             case AttackState.Prepare:
-                isMovable = false;
-                isDirectionChangable = false;
+                _isMovable = false;
+                _isDirectionChangable = false;
+                _move.x = 0;
+                _rb.velocity = new Vector2(0.0f, _rb.velocity.y);
                 _animator.Play("Attack");
                 _animationTimer = _attackAnimationTime;
                 _attackState = AttackState.OnAction;
@@ -571,8 +577,8 @@ public class PlayerController : MonoBehaviour
             case DashState.Idle:
                 break;
             case DashState.Prepare:
-                isMovable = false;
-                isDirectionChangable = false;
+                _isMovable = false;
+                _isDirectionChangable = false;
                 _animator.Play("Dash");
                 _animationTimer = _dashAnimationTime;
                 _dashState++;
@@ -618,8 +624,8 @@ public class PlayerController : MonoBehaviour
                 break;
             case CrouchState.Prepare:
                 _move.x = 0.0f;
-                isMovable = false;
-                isDirectionChangable = true;
+                _isMovable = false;
+                _isDirectionChangable = true;
                 _animator.Play("Crouch");
                 _crouchState = CrouchState.OnAction;
                 break;
@@ -637,7 +643,6 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
-
     private void UpdateDownJumpState()
     {
         switch (_downJumpState)
@@ -645,8 +650,8 @@ public class PlayerController : MonoBehaviour
             case DownJumpState.Idle:
                 break;
             case DownJumpState.Prepare:
-                isMovable = false;
-                isDirectionChangable = true;
+                _isMovable = false;
+                _isDirectionChangable = true;
                 _animator.Play("Jump");
                 _rb.velocity = new Vector2(_rb.velocity.x, 0.0f);
                 _groundDetector.IgnoreLastGround();
@@ -675,7 +680,6 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
-
     private float GetAnimationTime(string clipName)
     {
         RuntimeAnimatorController rac = _animator.runtimeAnimatorController;
@@ -686,9 +690,11 @@ public class PlayerController : MonoBehaviour
                 return rac.animationClips[i].length;
             }
         }
+
         Debug.LogWarning($"GetAnimationTime : {clipName} 을 찾을 수 없습니다.");
         return -1.0f;
     }
+
     private void AttackHit()
     {
         Vector2 attackCenter = new Vector2(_attackHitCastCenter.x * _direction,
@@ -701,7 +707,14 @@ public class PlayerController : MonoBehaviour
                                              _attackTargetLayer);
         if (hit.collider != null)
         {
-            Debug.Log($"Attack hit ! : {hit.collider.gameObject.name}");
+            if (hit.collider.TryGetComponent(out Enemy enemy))
+            {
+                enemy.Hurt(_player.damage);
+            }
+            if (hit.collider.TryGetComponent(out EnemyController enemyController))
+            {
+                enemyController.KnockBack(_direction);
+            }
         }
     }
 

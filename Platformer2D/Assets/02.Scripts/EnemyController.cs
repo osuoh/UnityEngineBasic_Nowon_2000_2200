@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyControlloer : MonoBehaviour
+public class EnemyController : MonoBehaviour
 {
     public enum State
     {
@@ -21,8 +21,7 @@ public class EnemyControlloer : MonoBehaviour
         OnAction,
         Finish
     }
-
-    public enum MoveState
+    private enum MoveState
     {
         Idle,
         Prepare,
@@ -30,9 +29,6 @@ public class EnemyControlloer : MonoBehaviour
         OnAction,
         Finish
     }
-
-   
-
     private enum AttackState
     {
         Idle,
@@ -41,7 +37,6 @@ public class EnemyControlloer : MonoBehaviour
         OnAction,
         Finish
     }
-
     private enum HurtState
     {
         Idle,
@@ -50,7 +45,6 @@ public class EnemyControlloer : MonoBehaviour
         OnAction,
         Finish
     }
-
     private enum DieState
     {
         Idle,
@@ -59,7 +53,6 @@ public class EnemyControlloer : MonoBehaviour
         OnAction,
         Finish
     }
-
     private enum AIState
     {
         Idle,
@@ -75,15 +68,15 @@ public class EnemyControlloer : MonoBehaviour
     [SerializeField] private State _state;
     [SerializeField] private IdleState _idleState;
     [SerializeField] private MoveState _moveState;
-    [SerializeField] private HurtState _hurtState;
     [SerializeField] private AttackState _attackState;
+    [SerializeField] private HurtState _hurtState;
     [SerializeField] private DieState _dieState;
     [SerializeField] private AIState _aiState;
 
     [Header("AI")]
     [SerializeField] private bool _aiAutoFollow;
     [SerializeField] private bool _aiAttackable;
-    [SerializeField] private float _aiTargetDetectRange;
+    [SerializeField] private float _aiTargetDetectRange;    
     [SerializeField] private float _aiBehaviorTimeMin;
     [SerializeField] private float _aiBehaviorTimeMax;
     private float _aiBehaviorTimer;
@@ -93,6 +86,7 @@ public class EnemyControlloer : MonoBehaviour
     private bool _isMovable = true;
     private bool _isDirectionChangable = true;
     private Vector2 _move;
+    // -1 : left , +1 : right
     private int _direction;
     public int direction
     {
@@ -115,7 +109,7 @@ public class EnemyControlloer : MonoBehaviour
         }
     }
     [SerializeField] private int _directionInit;
-
+    
 
     [SerializeField] private LayerMask _targetLayer;
 
@@ -128,6 +122,25 @@ public class EnemyControlloer : MonoBehaviour
     private float _hurtTime;
     private float _dieTime;
 
+    [SerializeField] private Vector2 _knockBackForce;
+    public void TryHurt()
+    {
+        if (_state == State.Hurt)
+            _animationTimer = _hurtTime;
+        else
+            ChangeState(State.Hurt);
+    }
+    public void TryDie()
+    {
+        ChangeState(State.Die);
+    }
+
+    public void KnockBack(int knockBackDirection)
+    {
+        _rb.velocity = Vector2.zero;
+        _rb.AddForce(new Vector2(knockBackDirection * _knockBackForce.x, _knockBackForce.y), ForceMode2D.Impulse);
+    }
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody2D>();
@@ -136,9 +149,7 @@ public class EnemyControlloer : MonoBehaviour
         _attackTime = GetAnimationTime("Attack");
         _hurtTime = GetAnimationTime("Hurt");
         _dieTime = GetAnimationTime("Die");
-
     }
-
     private void Update()
     {
         UpdateAIState();
@@ -149,21 +160,26 @@ public class EnemyControlloer : MonoBehaviour
                 direction = -1;
             else if (_move.x > 0.0f)
                 direction = 1;
-            
         }
 
-
-        if (_isMovable)
+        if (_state != State.Hurt && 
+            _state != State.Die)
         {
-            if (Mathf.Abs(_move.x) > 0.0f)
-                ChangeState(State.Move);
-            else
-                ChangeState(State.Idle);
+            if (_isMovable)
+            {
+                if (Mathf.Abs(_move.x) > 0.0f)
+                    ChangeState(State.Move);
+                else
+                    ChangeState(State.Idle);
+            }
         }
 
         UpdateState();
     }
-
+    private void FixedUpdate()
+    {
+        transform.position += new Vector3(_move.x * _moveSpeed, _move.y, 0) * Time.fixedDeltaTime;
+    }
     private void UpdateState()
     {
         switch (_state)
@@ -212,8 +228,6 @@ public class EnemyControlloer : MonoBehaviour
                 break;
             default:
                 break;
-
-                
         }
 
         switch (newState)
@@ -225,7 +239,7 @@ public class EnemyControlloer : MonoBehaviour
                 _moveState = MoveState.Prepare;
                 break;
             case State.Attack:
-                _attackState= AttackState.Prepare;
+                _attackState = AttackState.Prepare;
                 break;
             case State.Hurt:
                 _hurtState = HurtState.Prepare;
@@ -236,10 +250,16 @@ public class EnemyControlloer : MonoBehaviour
             default:
                 break;
         }
+
+        _state = newState;
     }
 
     private void UpdateAIState()
     {
+        if (_state == State.Hurt ||
+            _state == State.Die)
+            return;
+
         if (_aiAutoFollow == true)
         {
             if (Physics2D.OverlapCircle(_rb.position, _aiTargetDetectRange, _targetLayer))
@@ -257,11 +277,13 @@ public class EnemyControlloer : MonoBehaviour
             case AIState.DecideRandomBehavior:
                 _move.x = 0;
                 _aiBehaviorTimer = Random.Range(_aiBehaviorTimeMin, _aiBehaviorTimeMax);
-                _aiState = (AIState)Random.Range((int)AIState.TakeARest,(int)AIState.MoveRight);
+                _aiState = (AIState)Random.Range((int)AIState.TakeARest, (int)AIState.MoveRight);
                 break;
             case AIState.TakeARest:
                 if (_aiBehaviorTimer < 0)
+                {
                     _aiState = AIState.DecideRandomBehavior;
+                }
                 else
                 {
                     _aiBehaviorTimer -= Time.deltaTime;
@@ -271,7 +293,7 @@ public class EnemyControlloer : MonoBehaviour
                 if (_aiBehaviorTimer < 0)
                 {
                     _aiState = AIState.DecideRandomBehavior;
-                }
+                }   
                 else
                 {
                     _move.x = -1;
@@ -310,14 +332,12 @@ public class EnemyControlloer : MonoBehaviour
                         _move.x = -1.0f;
                     }
                 }
-
                 break;
             case AIState.AttackTarget:
                 break;
             default:
                 break;
         }
-
     }
     private void UpdateIdleState()
     {
@@ -326,6 +346,10 @@ public class EnemyControlloer : MonoBehaviour
             case IdleState.Idle:
                 break;
             case IdleState.Prepare:
+                _isMovable = true;
+                _isDirectionChangable = true;
+                _animator.Play("Idle");
+                _idleState = IdleState.OnAction;
                 break;
             case IdleState.Casting:
                 break;
@@ -345,6 +369,10 @@ public class EnemyControlloer : MonoBehaviour
             case MoveState.Idle:
                 break;
             case MoveState.Prepare:
+                _isMovable = true;
+                _isDirectionChangable = true;
+                _animator.Play("Move");
+                _moveState = MoveState.OnAction;
                 break;
             case MoveState.Casting:
                 break;
@@ -356,7 +384,6 @@ public class EnemyControlloer : MonoBehaviour
                 break;
         }
     }
-
     private void UpdateAttackState()
     {
         switch (_attackState)
@@ -364,6 +391,12 @@ public class EnemyControlloer : MonoBehaviour
             case AttackState.Idle:
                 break;
             case AttackState.Prepare:
+                _isMovable = false;
+                _isDirectionChangable = false;
+                _move.x = 0.0f;
+                _rb.velocity = Vector2.zero;
+                _animator.Play("Attack");
+                _attackState++;
                 break;
             case AttackState.Casting:
                 break;
@@ -375,7 +408,6 @@ public class EnemyControlloer : MonoBehaviour
                 break;
         }
     }
-
     private void UpdateHurtState()
     {
         switch (_hurtState)
@@ -383,19 +415,30 @@ public class EnemyControlloer : MonoBehaviour
             case HurtState.Idle:
                 break;
             case HurtState.Prepare:
+                _isMovable = false;
+                _isDirectionChangable = false;
+                _animationTimer = _hurtTime;
+                _animator.Play("Hurt");
+                _hurtState = HurtState.OnAction;
                 break;
             case HurtState.Casting:
                 break;
             case HurtState.OnAction:
+                if (_animationTimer < 0)
+                {
+                    ChangeState(State.Idle);
+                }
+                else
+                {
+                    _animationTimer -= Time.deltaTime;
+                }
                 break;
             case HurtState.Finish:
                 break;
             default:
                 break;
         }
-
     }
-
     private void UpdateDieState()
     {
         switch (_dieState)
@@ -403,10 +446,25 @@ public class EnemyControlloer : MonoBehaviour
             case DieState.Idle:
                 break;
             case DieState.Prepare:
+                _isMovable = false;
+                _isDirectionChangable = false;
+                _move.x = 0;
+                _rb.velocity = Vector2.zero;
+                _animationTimer = _dieTime;
+                _animator.Play("Die");
+                _dieState = DieState.OnAction;
                 break;
             case DieState.Casting:
                 break;
             case DieState.OnAction:
+                if (_animationTimer < 0)
+                {
+                    Destroy(gameObject);
+                }
+                else
+                {
+                    _animationTimer -= Time.deltaTime;
+                }
                 break;
             case DieState.Finish:
                 break;
@@ -425,6 +483,7 @@ public class EnemyControlloer : MonoBehaviour
                 return rac.animationClips[i].length;
             }
         }
+
         Debug.LogWarning($"GetAnimationTime : {clipName} 을 찾을 수 없습니다.");
         return -1.0f;
     }
@@ -435,4 +494,3 @@ public class EnemyControlloer : MonoBehaviour
         Gizmos.DrawWireSphere(transform.position, _aiTargetDetectRange);
     }
 }
-
