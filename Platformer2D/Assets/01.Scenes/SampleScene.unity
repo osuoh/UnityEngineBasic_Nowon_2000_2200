@@ -559,7 +559,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 308834324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.07, y: 0.204, z: 0}
+  m_LocalPosition: {x: 0.18, y: 0.204, z: 0}
   m_LocalScale: {x: 0.3098, y: 0.0819, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -840,7 +840,7 @@ MonoBehaviour:
   m_MinValue: 0
   m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.605
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2074,7 +2074,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1669867637}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.323, y: 0.43, z: 0}
+  m_LocalPosition: {x: 0.55, y: 0.412, z: 0}
   m_LocalScale: {x: 0.3098, y: 0.0819, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2203,7 +2203,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1692416170}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.226, y: 0.314, z: 0}
+  m_LocalPosition: {x: 0.356, y: 0.311, z: 0}
   m_LocalScale: {x: 0.3098, y: 0.0819, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -2389,7 +2389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f529dd128e6064c479bb5c0e854bbe38, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 1
+  damage: 2
   _hpBar: {fileID: 1282420800}
   _hpMax: 50
 --- !u!114 &2098803619
@@ -2428,6 +2428,7 @@ MonoBehaviour:
   _attackTargetLayer:
     serializedVersion: 2
     m_Bits: 1048576
+  _knockBackForce: {x: 0.5, y: 0.5}
 --- !u!70 &2098803621
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
