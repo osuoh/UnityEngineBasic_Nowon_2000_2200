@@ -6,7 +6,7 @@ public class StateMachineMove : StateMachineBase
 {
     public StateMachineMove(StateMachineManager.State machineState,
                             StateMachineManager manager,
-                            AnimationManager animationManager)
+                            AnimationManager animationManager) 
         : base(machineState, manager, animationManager)
     {
     }
@@ -18,9 +18,8 @@ public class StateMachineMove : StateMachineBase
         state = State.Prepare;
     }
 
-    public override void FIxedUpdateState()
+    public override void FixedUpdateState()
     {
-        
     }
 
     public override void ForceStop()

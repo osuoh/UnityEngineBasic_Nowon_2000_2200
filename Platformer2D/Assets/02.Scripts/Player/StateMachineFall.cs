@@ -7,7 +7,7 @@ public class StateMachineFall : StateMachineBase
     private GroundDetector _groundDetector;
     public StateMachineFall(StateMachineManager.State machineState,
                             StateMachineManager manager,
-                            AnimationManager animationManager)
+                            AnimationManager animationManager) 
         : base(machineState, manager, animationManager)
     {
         _groundDetector = manager.GetComponent<GroundDetector>();
@@ -20,9 +20,8 @@ public class StateMachineFall : StateMachineBase
         state = State.Prepare;
     }
 
-    public override void FIxedUpdateState()
+    public override void FixedUpdateState()
     {
-        
     }
 
     public override void ForceStop()
@@ -33,10 +32,10 @@ public class StateMachineFall : StateMachineBase
     public override bool IsExecuteOK()
     {
         bool isOK = false;
-        if (_groundDetector.isDetected == false &&
-            (manager.state == StateMachineManager.State.Idle ||
-             manager.state == StateMachineManager.State.Move ||
-             manager.state == StateMachineManager.State.Jump ))
+        if (_groundDetector.isDetected == false && 
+            (manager.state == StateMachineManager.State.Idle  || 
+             manager.state == StateMachineManager.State.Move  || 
+             manager.state == StateMachineManager.State.Jump))
             isOK = true;
         return isOK;
     }

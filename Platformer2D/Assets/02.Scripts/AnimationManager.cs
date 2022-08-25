@@ -27,5 +27,4 @@ public class AnimationManager : MonoBehaviour
     {
         animator = GetComponent<Animator>();
     }
-
 }

@@ -79,7 +79,7 @@ public class GroundDetector : MonoBehaviour
 
                 // 올라가면서 통과, 내려가면서 통과 체크
                 if (_col.transform.position.y > targetColCenter + _col.size.y / 2.0f + _size.y ||
-                    _col.transform.position.y + _col.size.y < targetColCenter - _col.size.y / 2.0f - _size.y)
+                    _col.transform.position.y + _col.size.y / 2.0f < targetColCenter - _col.size.y / 2.0f - _size.y)
                 {
                     isPassed = true;
                 }
@@ -103,14 +103,18 @@ public class GroundDetector : MonoBehaviour
         Gizmos.DrawWireCube(_center, _size);
 
         float targetColCenter = tmpCol.transform.position.y + tmpCol.offset.y;
-
         Gizmos.color = Color.black;
         Gizmos.DrawSphere(new Vector3(transform.position.x,
                                       targetColCenter + _col.size.y / 2.0f + _size.y,
                                       0),
                           0.02f);
         Gizmos.DrawSphere(new Vector3(transform.position.x,
-                                       targetColCenter - _col.size.y / 2.0f - _size.y,
+                                      targetColCenter - _col.size.y / 2.0f - _size.y,
+                                      0),
+                          0.02f);
+        Gizmos.color = Color.magenta;
+        Gizmos.DrawSphere(new Vector3(transform.position.x,
+                                      targetColCenter - tmpCol.offset.y,
                                       0),
                           0.02f);
     }

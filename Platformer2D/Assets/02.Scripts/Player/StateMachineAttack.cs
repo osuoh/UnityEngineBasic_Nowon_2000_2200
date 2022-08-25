@@ -6,7 +6,7 @@ public class StateMachineAttack : StateMachineBase
 {
     private float _animationTime;
     private float _animationTimer;
-    public StateMachineAttack(StateMachineManager.State machineState,
+    public StateMachineAttack(StateMachineManager.State machineState, 
                               StateMachineManager manager,
                               AnimationManager animationManager) 
         : base(machineState, manager, animationManager)
@@ -22,8 +22,8 @@ public class StateMachineAttack : StateMachineBase
         state = State.Prepare;
     }
 
-    public override void FIxedUpdateState()
-    {       
+    public override void FixedUpdateState()
+    {
     }
 
     public override void ForceStop()
@@ -35,7 +35,7 @@ public class StateMachineAttack : StateMachineBase
     {
         bool isOK = false;
         if (manager.state == StateMachineManager.State.Idle ||
-            manager.state == StateMachineManager.State.Move ||
+            manager.state == StateMachineManager.State.Move || 
             manager.state == StateMachineManager.State.Jump ||
             manager.state == StateMachineManager.State.Fall)
             isOK = true;
@@ -45,6 +45,7 @@ public class StateMachineAttack : StateMachineBase
     public override StateMachineManager.State UpdateState()
     {
         StateMachineManager.State nextState = managerState;
+
         switch (state)
         {
             case State.Idle:
@@ -74,6 +75,7 @@ public class StateMachineAttack : StateMachineBase
             default:
                 break;
         }
+
         return nextState;
     }
 }

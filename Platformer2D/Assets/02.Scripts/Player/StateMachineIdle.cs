@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class StateMachineIdle : StateMachineBase
 {
-    public StateMachineIdle(StateMachineManager.State machineState,
-                            StateMachineManager manager,
-                            AnimationManager animationManager)
+    public StateMachineIdle(StateMachineManager.State machineState, 
+                            StateMachineManager manager, 
+                            AnimationManager animationManager) 
         : base(machineState, manager, animationManager)
     {
     }
@@ -18,7 +18,7 @@ public class StateMachineIdle : StateMachineBase
         state = State.Prepare;
     }
 
-    public override void FIxedUpdateState()
+    public override void FixedUpdateState()
     {
     }
 
@@ -40,7 +40,7 @@ public class StateMachineIdle : StateMachineBase
             case State.Idle:
                 break;
             case State.Prepare:
-                animationManager.animator.Play("Idle");
+                animationManager.Play("Idle");
                 state = State.OnAction;
                 break;
             case State.Casting:

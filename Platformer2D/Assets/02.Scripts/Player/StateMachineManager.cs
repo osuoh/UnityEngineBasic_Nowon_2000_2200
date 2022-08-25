@@ -21,9 +21,9 @@ public class StateMachineManager : MonoBehaviour
         Die
     }
     public State state;
+
     private Dictionary<State, StateMachineBase> _machines = new Dictionary<State, StateMachineBase>();
     private Dictionary<KeyCode, State> _states = new Dictionary<KeyCode, State>();
-
     // -1 : left , +1 : right
     private int _direction;
     public int direction
@@ -65,10 +65,9 @@ public class StateMachineManager : MonoBehaviour
     private float h => Input.GetAxis("Horizontal");
     private float v => Input.GetAxis("Vertical");
 
-    //============================================================================
-    //****************************** Private Methods *****************************
-    //============================================================================
-
+    //==========================================================================
+    //*************************** Public Methods *******************************
+    //==========================================================================
     public void ChangeState(State newState)
     {
         if (state == newState ||
@@ -79,7 +78,6 @@ public class StateMachineManager : MonoBehaviour
         _machines[newState].Execute();
         _current = _machines[newState];
         state = newState;
-
     }
 
     public void ResetVelocity()
@@ -88,17 +86,13 @@ public class StateMachineManager : MonoBehaviour
         _rb.velocity = Vector2.zero;
     }
 
-
-    //============================================================================
-    //****************************** Private Methods *****************************
-    //============================================================================
-
+    //==========================================================================
+    //*************************** Private Methods ******************************
+    //==========================================================================
     private void Awake()
     {
         StartCoroutine(E_Init());
-    } 
-
-    
+    }
 
     IEnumerator E_Init()
     {
@@ -122,7 +116,6 @@ public class StateMachineManager : MonoBehaviour
         {
             AddStateMachine((State)value);
         }
-        
     }
 
     private void AddStateMachine(State state)
@@ -134,7 +127,7 @@ public class StateMachineManager : MonoBehaviour
         Type type = Type.GetType(typeName);
         if (type != null)
         {
-            ConstructorInfo constructorInfo =
+            ConstructorInfo constructorInfo = 
                 type.GetConstructor(new Type[]
                 {
                     typeof(State),
@@ -142,7 +135,7 @@ public class StateMachineManager : MonoBehaviour
                     typeof(AnimationManager)
                 });
 
-            StateMachineBase machine =
+            StateMachineBase machine = 
                 constructorInfo.Invoke(new object[]
                 {
                     state,
@@ -164,9 +157,9 @@ public class StateMachineManager : MonoBehaviour
 
     private void Update()
     {
-    if (isReady == false)
-        return;
-    
+        if (isReady == false)
+            return;
+
         if (isDirectionChangable)
         {
             if (h < 0.0f)
@@ -193,17 +186,20 @@ public class StateMachineManager : MonoBehaviour
                 return;
             }
         }
+
         ChangeState(_current.UpdateState());
     }
 
     private void FixedUpdate()
     {
+        if (isReady == false)
+            return;
 
-        _current.FIxedUpdateState();
+        _current.FixedUpdateState();
         transform.position += new Vector3(_move.x * _moveSpeed, _move.y, 0) * Time.fixedDeltaTime;
     }
 
-
+    
 
     private void AttackHit()
     {

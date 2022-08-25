@@ -10,8 +10,8 @@ public class StateMachineCrouch : StateMachineBase
     private Vector2 _colOffsetCrouch = new Vector2(0.0f, 0.075f);
     private Vector2 _colSizeCrouch = new Vector2(0.15f, 0.15f);
     public StateMachineCrouch(StateMachineManager.State machineState,
-                              StateMachineManager manager,
-                              AnimationManager animationManager)
+                              StateMachineManager manager, 
+                              AnimationManager animationManager) 
         : base(machineState, manager, animationManager)
     {
         shortKey = KeyCode.DownArrow;
@@ -29,9 +29,8 @@ public class StateMachineCrouch : StateMachineBase
         state = State.Prepare;
     }
 
-    public override void FIxedUpdateState()
+    public override void FixedUpdateState()
     {
-        throw new System.NotImplementedException();
     }
 
     public override void ForceStop()
@@ -45,7 +44,7 @@ public class StateMachineCrouch : StateMachineBase
     {
         bool isOK = false;
         if (manager.state == StateMachineManager.State.Idle ||
-            manager.state == StateMachineManager.State.Move )
+            manager.state == StateMachineManager.State.Move)
             isOK = true;
         return isOK;
     }
@@ -59,6 +58,7 @@ public class StateMachineCrouch : StateMachineBase
             case State.Idle:
                 break;
             case State.Prepare:
+                manager.ResetVelocity();
                 animationManager.Play("Crouch");
                 state = State.OnAction;
                 break;

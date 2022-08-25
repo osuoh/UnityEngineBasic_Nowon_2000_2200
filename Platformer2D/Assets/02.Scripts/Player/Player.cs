@@ -27,7 +27,7 @@ public class Player : MonoBehaviour
     }
     [SerializeField] private Slider _hpBar;
     [SerializeField] private int _hpMax;
-    // private PlayerController _controller;
+    //private PlayerController _controller;
     private StateMachineManager _machineManager;
     private CapsuleCollider2D _col;
     public void Hurt(int damage)
@@ -72,8 +72,8 @@ public class Player : MonoBehaviour
     }
     private void Awake()
     {
-        // _controller = GetComponent<PlayerController>();
-        _machineManager = GetComponent<StateMachineManager>();
+        //_controller = GetComponent<PlayerController>();
+        _machineManager = GetComponent<StateMachineManager>();  
         _col = GetComponent<CapsuleCollider2D>();
         hp = _hpMax;
     }

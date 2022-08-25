@@ -1,7 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-
 public abstract class StateMachineBase
 {
     public KeyCode shortKey;
@@ -15,7 +12,6 @@ public abstract class StateMachineBase
         Error,
         WaitForErrorClear
     }
-
     protected State state { get; set; }
     protected StateMachineManager.State managerState { get; set; }
     protected StateMachineManager manager { get; set; }
@@ -29,10 +25,9 @@ public abstract class StateMachineBase
         this.animationManager = animationManager;
     }
 
-
     public abstract bool IsExecuteOK();
     public abstract void Execute();
     public abstract void ForceStop();
     public abstract StateMachineManager.State UpdateState();
-    public abstract void FIxedUpdateState();
+    public abstract void FixedUpdateState();
 }

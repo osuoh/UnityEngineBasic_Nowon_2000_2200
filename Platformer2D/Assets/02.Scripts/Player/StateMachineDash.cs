@@ -8,8 +8,8 @@ public class StateMachineDash : StateMachineBase
     private float _animationTime;
     private float _animationTimer;
     private float _dashSpeed = 2.0f;
-    public StateMachineDash(StateMachineManager.State machineState,
-                            StateMachineManager manager,
+    public StateMachineDash(StateMachineManager.State machineState, 
+                            StateMachineManager manager, 
                             AnimationManager animationManager) 
         : base(machineState, manager, animationManager)
     {
@@ -25,7 +25,7 @@ public class StateMachineDash : StateMachineBase
         state = State.Prepare;
     }
 
-    public override void FIxedUpdateState()
+    public override void FixedUpdateState()
     {
         switch (state)
         {
@@ -84,19 +84,19 @@ public class StateMachineDash : StateMachineBase
                 if (_animationTimer < _animationTime * 0.85f)
                     state++;
                 else
-                    _animationTime -= Time.deltaTime;
+                    _animationTimer -= Time.deltaTime;
                 break;
             case State.OnAction:
                 if (_animationTimer < _animationTime * 0.25f)
                     state++;
                 else
-                    _animationTime -= Time.deltaTime;
+                    _animationTimer -= Time.deltaTime;
                 break;
             case State.Finish:
                 if (_animationTimer < 0)
                     nextState = StateMachineManager.State.Idle;
                 else
-                    _animationTime -= Time.deltaTime;
+                    _animationTimer -= Time.deltaTime;
                 break;
             case State.Error:
                 break;
