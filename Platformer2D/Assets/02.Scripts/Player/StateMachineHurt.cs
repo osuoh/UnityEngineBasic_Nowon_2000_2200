@@ -23,7 +23,6 @@ public class StateMachineHurt : StateMachineBase
 
     public override void FixedUpdateState()
     {
-        
     }
 
     public override void ForceStop()
@@ -35,7 +34,7 @@ public class StateMachineHurt : StateMachineBase
     {
         bool isOK = false;
         if (managerState != StateMachineManager.State.Attack &&
-            managerState != StateMachineManager.State.Die )
+            managerState != StateMachineManager.State.Die)
             isOK = true;
         return isOK;
     }

@@ -20,7 +20,6 @@ public class StateMachineDie : StateMachineBase
 
     public override void FixedUpdateState()
     {
-        
     }
 
     public override void ForceStop()
@@ -48,7 +47,7 @@ public class StateMachineDie : StateMachineBase
             case State.Casting:
                 break;
             case State.OnAction:
-                // nothing to do 
+                // nothing to do
                 break;
             case State.Finish:
                 break;

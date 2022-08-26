@@ -17,6 +17,7 @@ public class StateMachineManager : MonoBehaviour
         Dash,
         Slide,
         Crouch,
+        EdgeGrab,
         Hurt,
         Die
     }
@@ -61,8 +62,7 @@ public class StateMachineManager : MonoBehaviour
     [SerializeField] private Vector2 _attackHitCastCenter = new Vector2(0.2f, 0.2f);
     [SerializeField] private Vector2 _attackHitCastSize = new Vector2(0.4f, 0.4f);
     [SerializeField] private LayerMask _attackTargetLayer;
-    [SerializeField] private Vector2 _knockBackForce =  new Vector2(0.5f, 0.5f);
-
+    [SerializeField] private Vector2 _knockBackForce = new Vector2(0.5f, 0.5f);
     private float h => Input.GetAxis("Horizontal");
     private float v => Input.GetAxis("Vertical");
 
@@ -192,6 +192,11 @@ public class StateMachineManager : MonoBehaviour
                 ChangeState(_states[shortKey]);
                 return;
             }
+        }
+
+        if (Input.GetKey(KeyCode.UpArrow))
+        {
+            ChangeState(State.EdgeGrab);
         }
 
         ChangeState(_current.UpdateState());
