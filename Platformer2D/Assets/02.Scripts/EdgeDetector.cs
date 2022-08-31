@@ -17,11 +17,11 @@ public class EdgeDetector : MonoBehaviour
         get => new Vector2(_rb.position.x + (_col.size.x / 2.0f * _col.gameObject.transform.lossyScale.x + 0.02f) * _machineManager.direction,
                            _rb.position.y + _col.size.y * _col.gameObject.transform.lossyScale.y);
     }
-    //public float topX, topY, bottomX, bottomY;
-    public float topX => _rb.position.x + ( _col.size.x / 2.0f * _col.gameObject.transform.lossyScale.x + 0.02f) * _machineManager.direction;
+    public float topX => _rb.position.x + (_col.size.x / 2.0f * _col.gameObject.transform.lossyScale.x + 0.02f) * _machineManager.direction;
     public float topY => _rb.position.y + _col.size.y * _col.gameObject.transform.lossyScale.y + 0.025f;
     public float bottomX => _rb.position.x + (_col.size.x / 2.0f * _col.gameObject.transform.lossyScale.x + 0.02f) * _machineManager.direction;
     public float bottomY => _rb.position.y + _col.size.y * _col.gameObject.transform.lossyScale.y - 0.025f;
+
     public bool topOn, bottomOn;
     private bool detectingFallingEdge;
     private bool detectingRisingEdge;
@@ -39,16 +39,16 @@ public class EdgeDetector : MonoBehaviour
     {
         topOn = Physics2D.OverlapCircle(new Vector2(topX,
                                                     topY),
-                                                    0.01f,
+                                                    0.015f,
                                                     _groundLayer);
+
         bottomOn = Physics2D.OverlapCircle(new Vector2(bottomX,
                                                        bottomY),
-                                                       0.01f,
+                                                       0.015f,
                                                        _groundLayer);
 
 
-      
-
+       
 
         // ¶³¾îÁú¶§ »ó½Â¿§Áö
         if (bottomOn &&
@@ -56,7 +56,7 @@ public class EdgeDetector : MonoBehaviour
             _rb.velocity.y < 0)
         {
             detectingRisingEdge = true;
-            Debug.Log("»ó½Â¿§Áö °ËÃâ");
+            Debug.Log("»ó½Â¿§Áö°ËÃâ");
         }
         else
         {
