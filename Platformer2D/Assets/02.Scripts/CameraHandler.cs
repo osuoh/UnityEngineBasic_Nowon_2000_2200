@@ -16,7 +16,6 @@ public class CameraHandler : MonoBehaviour
     private float _boundingShapeYMin;
     private float _boundingShapeYMax;
     [SerializeField] private Transform _target;
-
     private void Awake()
     {
         _tr = GetComponent<Transform>();
@@ -25,7 +24,6 @@ public class CameraHandler : MonoBehaviour
         _boundingShapeXMax = _boundShape.transform.position.x + _boundShape.offset.x + _boundShape.size.x / 2.0f;
         _boundingShapeYMin = _boundShape.transform.position.y + _boundShape.offset.y - _boundShape.size.y / 2.0f;
         _boundingShapeYMax = _boundShape.transform.position.y + _boundShape.offset.y + _boundShape.size.y / 2.0f;
-
     }
 
     private void LateUpdate()
@@ -37,6 +35,7 @@ public class CameraHandler : MonoBehaviour
     {
         Vector3 targetPos = new Vector3(_target.position.x, _target.position.y, _tr.position.z) +
                             _offset;
+
         Vector3 smoothPos = Vector3.Lerp(_tr.position, targetPos, _smoothness * Time.deltaTime);
 
         Vector3 camWorldPosLeftBottom = _camera.ViewportToWorldPoint(new Vector3(0.0f, 0.0f, _camera.nearClipPlane));
@@ -54,7 +53,7 @@ public class CameraHandler : MonoBehaviour
         // Y min bound
         if (smoothPos.y < _boundingShapeYMin + camWorldPosSize.y / 2.0f)
             smoothPos.y = _boundingShapeYMin + camWorldPosSize.y / 2.0f;
-        // Y max bound
+        // X max bound
         else if (smoothPos.y > _boundingShapeYMax - camWorldPosSize.y / 2.0f)
             smoothPos.y = _boundingShapeYMax - camWorldPosSize.y / 2.0f;
 
@@ -73,6 +72,5 @@ public class CameraHandler : MonoBehaviour
 
         Gizmos.color = Color.yellow;
         Gizmos.DrawWireCube(_boundShape.transform.position + (Vector3)_boundShape.offset, _boundShape.size);
-
     }
 }

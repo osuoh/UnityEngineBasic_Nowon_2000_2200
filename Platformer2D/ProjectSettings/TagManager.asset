@@ -27,7 +27,7 @@ TagManager:
   - 
   - Enemy
   - EnemyCollision
-  - 
+  - EnemyProjectile
   - 
   - 
   - 
@@ -42,19 +42,19 @@ TagManager:
     uniqueID: 0
     locked: 0
   - name: Background
-    uniqueID: 2669902571
+    uniqueID: 1050312151
     locked: 0
   - name: Ground
     uniqueID: 900974747
     locked: 0
   - name: BackgroundObjects
-    uniqueID: 780689005
+    uniqueID: 2795600895
     locked: 0
   - name: Obstacles
-    uniqueID: 298603505
+    uniqueID: 2289885093
     locked: 0
   - name: ObstaclesInteractable
-    uniqueID: 3492194091
+    uniqueID: 27923793
     locked: 0
   - name: Player
     uniqueID: 2238068561
