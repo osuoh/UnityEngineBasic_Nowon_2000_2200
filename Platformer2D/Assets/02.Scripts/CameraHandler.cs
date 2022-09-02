@@ -15,11 +15,12 @@ public class CameraHandler : MonoBehaviour
     private float _boundingShapeXMax;
     private float _boundingShapeYMin;
     private float _boundingShapeYMax;
-    [SerializeField] private Transform _target;
+    private Transform _target;
     private void Awake()
     {
         _tr = GetComponent<Transform>();
         _camera = Camera.main;
+        _target = Player.instance.transform;
         _boundingShapeXMin = _boundShape.transform.position.x + _boundShape.offset.x - _boundShape.size.x / 2.0f;
         _boundingShapeXMax = _boundShape.transform.position.x + _boundShape.offset.x + _boundShape.size.x / 2.0f;
         _boundingShapeYMin = _boundShape.transform.position.y + _boundShape.offset.y - _boundShape.size.y / 2.0f;

@@ -38,11 +38,11 @@ public class Projectile : MonoBehaviour
         _elapsedFixedTime += Time.fixedDeltaTime;
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (1 << other.gameObject.layer == _targetLayer)
+        if (1 << collision.gameObject.layer == _targetLayer)
         {
-            if (other.gameObject.TryGetComponent(out Player player))
+            if (collision.gameObject.TryGetComponent(out Player player))
             {
                 player.Hurt(_damage);
                 player.GetComponent<StateMachineManager>().KnockBack();
@@ -50,10 +50,11 @@ public class Projectile : MonoBehaviour
                 Destroy(gameObject);
             }
         }
-        else if (1 << other.gameObject.layer == LayerMask.NameToLayer("Ground"))
+        else if (1 << collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             ShowEffect();
             Destroy(gameObject);
         }
     }
+    
 }
